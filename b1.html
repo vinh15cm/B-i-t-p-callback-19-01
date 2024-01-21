@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function findLongestWordLength(str) {
+            // Tách chuỗi thành mảng các từ
+            const wordsArray = str.split(/\s+/);
+
+            // Khởi tạo biến để lưu trữ thông tin của từ dài nhất
+            let longestWordInfo = ["", 0];
+
+            // Lặp qua mỗi từ trong mảng
+            wordsArray.forEach(word => {
+                // Nếu từ hiện tại có độ dài lớn hơn từ dài nhất hiện tại
+                if (word.length > longestWordInfo[1]) {
+                    longestWordInfo = [word, word.length];
+                }
+            });
+
+            // Trả về mảng chứa từ dài nhất và độ dài của nó
+            return longestWordInfo;
+        }
+
+        // Chuỗi cần kiểm tra
+        const inputString = "ua ali chi minh si so bn đc khum";
+
+        // Gọi hàm và in kết quả ra màn hình
+        const result = findLongestWordLength(inputString);
+        console.log(result);
+    </script>
+</body>
+
+</html>

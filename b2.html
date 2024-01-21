@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function largestOfArrs(...arrays) {
+            // Kiểm tra xem có mảng con nào không
+            if (arrays.length === 0) {
+                return [];
+            }
+
+            // Sử dụng map để tạo mảng mới chứa số lớn nhất của mỗi mảng con
+            const result = arrays.map(subArray => Math.max(...subArray));
+
+            return result;
+        }
+
+        // Thử nghiệm hàm với các ví dụ
+        console.log(largestOfArrs([1, 2, 3, 4], [-1, -2, -3], [5, 1, 2, 9])); // [4, -1, 9]
+        console.log(largestOfArrs([1, 2, 3, 4], [5, 1, 2, 9]));             // [4, 9]
+        console.log(largestOfArrs());
+    </script>
+</body>
+
+</html>

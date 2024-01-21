@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function chunkArrayInGroups(arr, n) {
+            // Tạo mảng mới để lưu trữ mảng con
+            const result = [];
+
+            // Duyệt qua mảng gốc và chia thành các mảng con
+            for (let i = 0; i < arr.length; i += n) {
+                // Sử dụng slice để cắt mảng con từ vị trí i đến i + n
+                const chunk = arr.slice(i, i + n);
+                // Thêm mảng con vào mảng kết quả
+                result.push(chunk);
+            }
+
+            return result;
+        }
+
+        // Thử nghiệm hàm với các ví dụ
+        console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2)); // [ ["a", "b"], ["c", "d"] ]
+        console.log(chunkArrayInGroups(["a", "b", "c", "d"], 3)); // [ ["a", "b", "c"], ["d"] ]
+    </script>
+</body>
+
+</html>
